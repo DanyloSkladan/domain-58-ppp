@@ -92,7 +92,7 @@ h6 {
 }
 
 .container {
-    max-width: 1356px;
+    max-width: 1520px;
     padding: 0 40px;
     margin: 0 auto;
 }
@@ -102,7 +102,7 @@ h6 {
     font-size: 52px;
     line-height: 110%;
     text-align: center;
-    background: radial-gradient(49.66% 45.97% at 50.00%  54.03%, rgb(255, 255, 255) 14.423076808452606%, rgb(161, 161, 165) 100%);
+    background: radial-gradient(49.66% 45.97% at 50.00% 54.03%, rgb(255, 255, 255) 14.423076808452606%, rgb(161, 161, 165) 100%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -115,18 +115,35 @@ h6 {
 }
 
 .link {
+    position: relative;
     display: flex;
     text-align: center;
     font-weight: 400;
     font-size: 16px;
-    border: 1px solid #ffffff;
     color: #fff;
     border-radius: 40px;
-    padding: 10px 24px;
+    padding: 20px 34px;
     width: fit-content;
     background: linear-gradient(180deg, #534ddf 0%, #3f45d7 100%);
-    transition: background .3s ease-in-out, color .3s ease-in-out;
+    transition: background .3s ease-in-out, color .3s ease-in-out, linear-gradient .3s ease-in-out;
     box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.25);
+}
+
+.link::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 40px;
+    padding: 2px;
+    background: linear-gradient(180deg, #FFFFFF -23%, #3f45d7 78%);
+    mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    mask-composite: exclude;
+    -webkit-mask-composite: destination-out;
+    transition: background .3s ease-in-out, color .3s ease-in-out;
+}
+
+.link:hover {
+    background: linear-gradient(380deg, #FFFFFF -23%, #3f45d7 78%);
 }
 
 .link.--link-alternative {
@@ -205,6 +222,10 @@ h6 {
 
     .description {
         line-height: 170% !important;
+    }
+
+    .link {
+        padding: 15px 25px;
     }
 }
 
