@@ -1,0 +1,215 @@
+.questions__wrapper {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    z-index: 3;
+}
+
+.questions__eclipse {
+    content: "";
+    width: 345px;
+    height: 328px;
+    border-radius: 50%;
+    background-color: #0d0f4c;
+    filter: blur(115px);
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.questions__left {
+    position: relative;
+    height: fit-content;
+}
+
+.questions__line {
+    position: absolute;
+    left: -60px;
+    bottom: -50%;
+}
+
+.questions__title.title {
+    text-align: left;
+}
+
+.questions__title {
+    margin-bottom: 20px;
+    max-width: 387px;
+}
+
+.questions__description {
+    margin-bottom: 27px;
+    max-width: 532px;
+}
+
+
+.questions__item-body {
+    overflow: hidden;
+    height: 0;
+    user-select: none;
+    pointer-events: none;
+}
+
+.questions__item-title {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    gap: 16px;
+    font-size: 25px;
+    line-height: 140%;
+    color: #FFFFFF;
+    user-select: none;
+    pointer-events: none;
+    transition: color .7s ease-in-out;
+}
+
+.questions__item-content {
+    margin-top: 20px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 140%;
+    color: rgba(255, 255, 255, 0.6);
+    user-select: none;
+    pointer-events: none;
+}
+
+.questions__item-content.description {
+    text-align: left;
+}
+
+.questions__right {
+    position: relative;
+}
+
+.questions__right-line {
+    position: absolute;
+    top: -35px;
+    left: 40%;
+    transform: translateX(-50%);
+}
+
+.questions__items {
+    display: grid;
+    position: relative;
+    margin: 0 auto;
+    gap: 24px;
+    max-width: 602px;
+}
+
+.questions__item {
+    box-shadow: inset 6px 15px 53px 0 rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 14px;
+    position: relative;
+    padding: 21px 40px 21px 25px;
+    transition: background .5s ease-in-out;
+}
+
+.questions__item-img {
+    display: flex;
+    align-items: center;
+}
+
+.questions__item-icon {
+    position: absolute;
+    top: 30px;
+    right: 34px;
+    width: 15px;
+    height: 15px;
+    user-select: none;
+    pointer-events: none;
+}
+
+.questions__item-icon:before,
+.questions__item-icon:after {
+    content: "";
+    display: block;
+    background-color: #FFFFFF;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transition: background-color .7s, transform .7s;
+    width: 100%;
+    height: 2px;
+    pointer-events: none;
+    z-index: 3;
+}
+
+.questions__item-icon:before {
+    transform: translateY(-50%);
+}
+
+.questions__item-icon:after {
+    transform: translateY(-50%) rotate(90deg);
+}
+
+.questions__item.questions__item-active .questions__item-icon {
+    transition: background-color .3s ease-in-out;
+}
+
+.questions__item.questions__item-active .questions__item-icon:before {
+    transform: translateY(-50%);
+}
+
+.questions__item.questions__item-active .questions__item-icon:after {
+    transform: translateY(-50%) rotate(0deg);
+}
+
+@media (max-width: 550px) {
+    .questions__title {
+        margin-bottom: 20px;
+    }
+
+    .questions__items-left, .questions__items-right {
+        gap: 10px;
+    }
+
+    .questions__item-title {
+        font-size: 14px;
+        gap: 10px;
+    }
+
+    .questions__item-img svg{
+        width: 15px;
+        height: 15px;
+    }
+
+    .questions__items {
+        gap: 10px;
+    }
+
+    .questions__item {
+        padding: 20px 40px 20px 20px;
+        border-radius: 5px;
+    }
+
+    .questions__item-icon {
+        top: 18px;
+        right: 14px;
+        width: 13px;
+        height: 13px;
+    }
+
+    .questions__item-content {
+        margin-top: 12px;
+    }
+}
+
+@media (max-width: 450px) {
+    .questions__item {
+        padding: 15px 35px 15px 15px;
+    }
+}
+
+@media (max-width: 390px) {
+    .questions__item-title {
+        font-size: 15px;
+    }
+
+    .questions__item-content.description {
+        font-size: 12px !important;
+    }
+}
